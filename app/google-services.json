@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "68779383997",
+    "firebase_url": "https://tophick-698df.firebaseio.com",
+    "project_id": "tophick-698df",
+    "storage_bucket": "tophick-698df.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:68779383997:android:7cabd00eaa9decc9",
+        "android_client_info": {
+          "package_name": "com.sasha.reviews"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "68779383997-h20229p1hhaprnrrbcf5djm3uo1n9s5f.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.sasha.reviews",
+            "certificate_hash": "9c42f6d643f7a09b85590b3f19f936430ac83bf4"
+          }
+        },
+        {
+          "client_id": "68779383997-73elbkam78hfmpm9gghtdonf2nn3j1cf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDdu6I-1SDtqIPWLaBk62PBU9VevzMw41s"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "68779383997-73elbkam78hfmpm9gghtdonf2nn3j1cf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
