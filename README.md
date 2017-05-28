@@ -1,8 +1,7 @@
 # KMA Reviews #
 
-The system allows users to post reviews and evaluate courses and teachers. 
-The system is available only for NaUKMA students.
-See reviews can be anyone, but in order to evaluate a course or teacher registration required.
+The system allows NaUKMA students to post reviews and evaluate courses and teachers. 
+Only registered users can see reviews for some time without leaving their own reviews. After time is up, user should post his own review to have opportunity to read others reviews.
 
 ## How to install ##
 
