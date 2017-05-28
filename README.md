@@ -6,7 +6,7 @@ Only registered users can see reviews for some time without leaving their own re
 ## How to install ##
 
 To edit existing project, clone repo to your computer. You need to install Android Studio, Android SDK and JDK in order to open
-project in official IDE -- Android Studio and to edit it. You do not need to worry about integrating with Firebase or any third-party libraries, the
+project in official IDE -- Android Studio and to edit it. You do not need to worry about integrating with Firebase or any third-party libraries, all needed files will be downloaded after compilation.
 
 
 ## Related projects ##
