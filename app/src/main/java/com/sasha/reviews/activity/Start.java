@@ -5,8 +5,11 @@ import android.os.Bundle;
 
 import com.sasha.reviews.R;
 import com.sasha.reviews.contract.MainContract;
+import com.sasha.reviews.presenter.MainPresenter;
 
 public class MainActivity extends AppCompatActivity implements MainContract.View {
+
+    MainPresenter presenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
