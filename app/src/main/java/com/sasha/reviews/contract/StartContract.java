@@ -1,6 +1,6 @@
 package com.sasha.reviews.contract;
 
-public interface MainContract {
+public interface StartContract {
 
     interface View{
 

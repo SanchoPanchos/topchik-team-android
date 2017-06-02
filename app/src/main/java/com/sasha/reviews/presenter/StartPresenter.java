@@ -1,11 +1,11 @@
 package com.sasha.reviews.presenter;
 
-import com.sasha.reviews.contract.MainContract;
+import com.sasha.reviews.contract.StartContract;
 
 
-public class MainPresenter implements MainContract.Presenter {
+public class StartPresenter implements StartContract.Presenter {
 
-    private MainContract.View view;
+    private StartContract.View view;
     //MODEL
 
 
