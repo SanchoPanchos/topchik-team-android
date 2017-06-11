@@ -22,6 +22,7 @@
             android:layout_marginTop="20dp"
             android:layout_height="wrap_content"
             android:hint="Email"
+            android:text="sasha@a.com"
             android:inputType="textEmailAddress"
             android:id="@+id/start_email"
             android:layout_centerHorizontal="true"/>
@@ -34,6 +35,7 @@
             android:inputType="textPassword"
             android:layout_height="wrap_content"
             android:hint="Password"
+            android:text="12345678"
             android:layout_below="@+id/start_email"
             android:id="@+id/start_password"
             android:layout_centerHorizontal="true"/>

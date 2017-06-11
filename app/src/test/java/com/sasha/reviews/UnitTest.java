@@ -1,22 +1,21 @@
 package com.sasha.reviews;
 
-import android.util.Log;
-
-import com.sasha.reviews.model.FirebaseModel;
 import com.sasha.reviews.model.Teacher;
 
 import org.junit.Assert;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
-
-
-public class ExampleUnitTest {
+public class UnitTest {
 
     @Test
-    public void shortNameTest() throws Exception {
+    public void shortNameFirstTest() throws Exception {
         Teacher teacher = new Teacher();
-        //Assert.assertTrue(teacher.getShortName("Oleksandr Zalrev Oleg").equals("AAA"));
-        System.out.print(teacher.getShortName("Oleksandr Bobrov Dinya"));
+        Assert.assertEquals("NOT EQUALS!!!", teacher.getShortName("Oleksandr Yurievich Zakrevskyi"), "A.A.A");
+    }
+
+    @Test
+    public void shortNameSecondTest() throws Exception {
+        Teacher teacher = new Teacher();
+        Assert.assertEquals("NOT EQUALS!!!", teacher.getShortName("Oleksandr Yurievich Zakrevskyi"), "Oleksandr Y.Z.");
     }
 }

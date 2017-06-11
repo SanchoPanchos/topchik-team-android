@@ -1,4 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <group android:checkableBehavior="single"
+        android:id="@+id/menu_group_top">
+
+        <item
+            android:id="@+id/nav_main"
+            android:title="Головна"/>
+
+        <item
+            android:id="@+id/nav_faculties"
+            android:title="Факультети"/>
+
+        <item
+            android:id="@+id/nav_courses"
+            android:title="Предмети"/>
+
+        <item
+            android:id="@+id/nav_lecturers"
+            android:title="Викладачі"/>
+
+    </group>
+
+    <group android:checkableBehavior="single"
+        android:id="@+id/menu_group_logout">
+        <item
+            android:id="@+id/nav_logout"
+            android:title="Вихід"/>
+    </group>
 </menu>

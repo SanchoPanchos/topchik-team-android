@@ -8,11 +8,20 @@ import com.google.android.gms.tasks.RuntimeExecutionException;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.sasha.reviews.presenters.FirebasePresenter;
+import com.sasha.reviews.presenters.MainPresenter;
 import com.sasha.reviews.presenters.RegisterPresenter;
 import com.sasha.reviews.presenters.StartPresenter;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Random;
 
 public class FirebaseModel {
 
@@ -72,5 +81,103 @@ public class FirebaseModel {
                         }
                     }
                 });
+    }
+
+    public void loadFaculties() {
+        final List<Faculty> faculties = new ArrayList<>();
+        dbRef.child("faculties").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                for(DataSnapshot child : dataSnapshot.getChildren()) {
+                    String about = child.child("about").getValue().toString();
+                    String img = child.child("img").getValue().toString();
+                    String name = child.child("name").getValue().toString();
+                    String nameShort = child.child("nameShort").getValue().toString();
+                    faculties.add(new Faculty(about, name, nameShort, img, new ArrayList<Department>()));
+                }
+                ((MainPresenter)presenter).onFacultiesLoaded(faculties);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+    }
+
+    public void loadTeachersSmall() {
+        final List<Teacher> teachers = new ArrayList<>();
+        final List<String> courcesIDs = new ArrayList<>();
+        dbRef.child("teachers").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                Random random = new Random();
+                int mDepartment = random.nextInt((int) dataSnapshot.getChildrenCount());
+                Iterator itr = dataSnapshot.getChildren().iterator();
+
+                for(int i = 0; i < mDepartment; i++) {
+                    itr.next();
+                }
+                DataSnapshot departmentSnapshot = (DataSnapshot) itr.next();
+                int departmentID = Integer.parseInt(departmentSnapshot.getKey());
+
+                for(DataSnapshot child : departmentSnapshot.getChildren()) {
+                    String about = child.child("about").getValue().toString();
+                    String img = child.child("img").getValue().toString();
+                    String name = child.child("name").getValue().toString();
+                    String email = child.child("email").getValue().toString();
+
+                    courcesIDs.clear();
+                    for(DataSnapshot courcesChild : departmentSnapshot.child("cources").getChildren()) {
+                        courcesIDs.add(courcesChild.getValue().toString());
+                    }
+                    teachers.add(new Teacher(about, courcesIDs, email, img, name, departmentID));
+                    if(teachers.size()>4)
+                        break;
+                }
+
+
+                ((MainPresenter)presenter).onTeachersLoaded(teachers);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
+        ((MainPresenter)presenter).onTeachersLoaded(teachers);
+    }
+
+    public void loadCourse() {
+        dbRef.child("courses").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                Random random = new Random();
+                Log.i("TAG", "" + dataSnapshot.getChildrenCount());
+                int mDepartment = random.nextInt((int) dataSnapshot.getChildrenCount());
+                Iterator itr = dataSnapshot.getChildren().iterator();
+
+                for(int i = 0; i < mDepartment; i++) {
+                    itr.next();
+                }
+                DataSnapshot departmentSnapshot = (DataSnapshot) itr.next();
+
+                int mCourse = random.nextInt((int) departmentSnapshot.getChildrenCount());
+                itr = departmentSnapshot.getChildren().iterator();
+
+                for(int i = 0; i < mCourse; i++) {
+                    itr.next();
+                }
+                DataSnapshot courseSnapshot = (DataSnapshot) itr.next();
+                Course course = courseSnapshot.getValue(Course.class);
+                ((MainPresenter)presenter).onCourseLoaded(course);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
     }
 }

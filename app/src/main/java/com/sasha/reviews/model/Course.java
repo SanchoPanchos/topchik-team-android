@@ -1,8 +1,44 @@
 package com.sasha.reviews.model;
 
-/**
- * Created by Sasha on 10.06.2017.
- */
+import java.util.List;
 
-class Course {
+public class Course {
+
+    private String about;
+    private int credits;
+    private int hours;
+    private List<TeacherDep> teachers;
+    private String name;
+
+    public Course(String about, int credits, int hours, List<TeacherDep> teachers, String name) {
+        this.about = about;
+        this.credits = credits;
+        this.hours = hours;
+        this.teachers = teachers;
+        this.name = name;
+    }
+
+    public Course(){
+
+    }
+
+    public String getAbout() {
+        return about;
+    }
+
+    public int getCredits() {
+        return credits;
+    }
+
+    public int getHours() {
+        return hours;
+    }
+
+    public List<TeacherDep> getTeachers() {
+        return teachers;
+    }
+
+    public String getName() {
+        return name;
+    }
 }

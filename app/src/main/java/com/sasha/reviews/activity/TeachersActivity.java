@@ -6,7 +6,7 @@ import android.widget.ListView;
 import android.widget.Spinner;
 
 import com.sasha.reviews.R;
-import com.sasha.reviews.adapter.TeachersAdapter;
+import com.sasha.reviews.adapter.TeachersSmallAdapter;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -15,7 +15,7 @@ public class TeachersActivity extends AppCompatActivity {
 
     @BindView(R.id.teachers_list) ListView teachersList;
     @BindView(R.id.teachers_spinner) Spinner teachersSpinner;
-    TeachersAdapter adapter;
+    TeachersSmallAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +26,7 @@ public class TeachersActivity extends AppCompatActivity {
     }
 
     private void init() {
-        adapter = new TeachersAdapter();
-        teachersList.setAdapter(adapter);
+        //adapter = new TeachersSmallAdapter(this, );
+        //teachersList.setAdapter(adapter);
     }
 }

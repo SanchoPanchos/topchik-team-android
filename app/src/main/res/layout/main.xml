@@ -1,22 +1,123 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v4.widget.DrawerLayout
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:id="@+id/main_drawer"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.sasha.reviews.activity.Main">
+    tools:openDrawer="start">
 
-    <Button
-        android:layout_width="200dp"
-        android:layout_height="60dp"
-        android:text="Teachers"
-        android:id="@+id/teachers"/>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <Button
-        android:layout_below="@+id/teachers"
-        android:layout_width="200dp"
-        android:layout_height="60dp"
-        android:text="Cources"
-        android:id="@+id/cources"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-</RelativeLayout>
+        <android.support.v7.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:id="@+id/main_toolbar"
+            android:background="#00BCD6"/>
+
+        <TextView
+            android:layout_below="@+id/main_toolbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#767877"
+            android:textSize="18sp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="10dp"
+            android:id="@+id/main_faculties_text"
+            android:text="Факультети"/>
+
+        <android.support.v7.widget.RecyclerView
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/main_faculties_text"
+            android:layout_width="match_parent"
+            android:id="@+id/main_faculties_list"
+            android:layout_height="120dp"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/main_faculties_list"
+            android:id="@+id/main_course_rel">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#767877"
+                android:textSize="18sp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="10dp"
+                android:id="@+id/main_course_text"
+                android:text="Предмет дня"/>
+
+            <ImageView
+                android:layout_below="@+id/main_course_text"
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="230dp"
+                android:id="@+id/main_course"
+                android:src="@drawable/course_back"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Курс дня"
+                android:textColor="#fff"
+                android:textSize="25sp"
+                android:layout_centerHorizontal="true"
+                android:id="@+id/main_course_name"
+                android:layout_marginTop="100dp"/>
+
+            <TextView
+                android:layout_below="@+id/main_course_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="23 відгуки"
+                android:layout_marginTop="10dp"
+                android:id="@+id/main_course_reviews"
+                android:textColor="#fff"
+                android:layout_centerHorizontal="true"
+                android:textSize="20sp" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:layout_below="@+id/main_course_rel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#767877"
+            android:textSize="18sp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="10dp"
+            android:id="@+id/main_lecturers_text"
+            android:text="Викладачі"/>
+
+        <android.support.v7.widget.RecyclerView
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/main_lecturers_text"
+            android:layout_width="match_parent"
+            android:id="@+id/main_lecturers_list"
+            android:layout_height="120dp"/>
+        </RelativeLayout>
+
+    </ScrollView>
+
+    <android.support.design.widget.NavigationView
+        android:background="#F7F7F7"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:itemIconTint="@color/menu_icon_color"
+        app:itemTextColor="@color/menu_text_color"
+        app:itemBackground="@android:color/transparent"
+        android:id="@+id/main_navigation_view"
+        app:menu="@menu/main_menu"/>
+
+
+</android.support.v4.widget.DrawerLayout>

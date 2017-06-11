@@ -13,33 +13,34 @@ import com.sasha.reviews.model.Teacher;
 
 import java.util.List;
 
-public class TeachersAdapter extends RecyclerView.Adapter<TeachersViewHolder> {
+public class TeachersSmallAdapter extends RecyclerView.Adapter<TeachersSmallViewHolder> {
 
     private Activity context;
     private List<Teacher> teachers;
 
-    public TeachersAdapter(Activity context, List<Teacher> teachers) {
+    public TeachersSmallAdapter(Activity context, List<Teacher> teachers) {
         this.context = context;
         this.teachers = teachers;
     }
 
     @Override
-    public TeachersViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public TeachersSmallViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.card_teacher_small, parent, false);
-        return new TeachersViewHolder(view);
+        return new TeachersSmallViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(TeachersViewHolder holder, int position) {
-        if(position==teachers.size()){
+    public void onBindViewHolder(TeachersSmallViewHolder holder, int position) {
+        if(position == teachers.size()){
             holder.image.setBackgroundColor(Color.BLACK);
-            holder.text.setText("END");
+            holder.image.setImageResource(R.drawable.ic_more_vert_white_24dp);
+            holder.text.setText("Більше");
         }
         else{
             Glide.with(context).load(teachers.get(position).getImage())
                     .into(holder.image);
-            holder.text.setText(teachers.get(position).getName());
+            holder.text.setText(teachers.get(position).getNameShort());
         }
     }
 
