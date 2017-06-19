@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.sasha.reviews.activities.DepartmentInfo">
+
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="#616893"
+        android:id="@+id/department_info_toolbar"/>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="#616893"
+        android:layout_below="@+id/department_info_toolbar"
+        android:id="@+id/department_info_rel">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Group title"
+            android:id="@+id/group_info_title"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            android:textColor="#fff"
+            android:textSize="27sp"/>
+
+    </RelativeLayout>
+
+    <android.support.design.widget.TabLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_below="@id/department_info_rel"
+        android:id="@+id/department_info_tab"
+        app:tabMode="fixed"
+        app:tabGravity="fill" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/department_info_tab">
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/department_info_view_pager"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

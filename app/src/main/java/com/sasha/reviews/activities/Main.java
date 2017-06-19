@@ -1,4 +1,4 @@
-package com.sasha.reviews.activity;
+package com.sasha.reviews.activities;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -20,12 +20,13 @@ import android.widget.TextView;
 
 
 import com.sasha.reviews.R;
-import com.sasha.reviews.adapter.FacultiesAdapter;
-import com.sasha.reviews.adapter.TeachersSmallAdapter;
+import com.sasha.reviews.adapters.FacultiesAdapter;
+import com.sasha.reviews.adapters.TeachersSmallAdapter;
 import com.sasha.reviews.contracts.MainContract;
 import com.sasha.reviews.model.Course;
 import com.sasha.reviews.model.Faculty;
 import com.sasha.reviews.model.FirebaseModel;
+import com.sasha.reviews.model.ItemClickSupport;
 import com.sasha.reviews.model.Teacher;
 import com.sasha.reviews.presenters.MainPresenter;
 
@@ -50,6 +51,7 @@ public class Main extends AppCompatActivity implements MainContract.View {
 
     private FacultiesAdapter facultiesAdapter;
     private TeachersSmallAdapter teachersAdapter;
+
 
     @Override
     public void onBackPressed() {
@@ -143,12 +145,22 @@ public class Main extends AppCompatActivity implements MainContract.View {
     }
 
     @Override
-    public void onFacultiesLoaded(List<Faculty> faculties) {
+    public void onFacultiesLoaded(final List<Faculty> faculties) {
         facultiesList.setHasFixedSize(true);
         LinearLayoutManager MyLayoutManager = new LinearLayoutManager(Main.this);
         MyLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
-        facultiesList.setAdapter(new FacultiesAdapter(this, faculties));
+        facultiesAdapter = new FacultiesAdapter(this, faculties);
+        facultiesList.setAdapter(facultiesAdapter);
         facultiesList.setLayoutManager(MyLayoutManager);
+        ItemClickSupport.addTo(facultiesList)
+                .setOnItemClickListener(new ItemClickSupport.OnItemClickListener() {
+                    @Override
+                    public void onItemClicked(RecyclerView recyclerView, int position, View v) {
+                        startActivity(new Intent(Main.this, FacultyInfo.class)
+                        .putExtra("FacultyName", faculties.get(position).getName())
+                        .putExtra("FacultyCode", faculties.get(position).getCode()));
+                    }
+                });
     }
 
     @Override

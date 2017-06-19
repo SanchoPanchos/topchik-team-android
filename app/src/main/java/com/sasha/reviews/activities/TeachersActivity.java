@@ -1,4 +1,4 @@
-package com.sasha.reviews.activity;
+package com.sasha.reviews.activities;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -6,7 +6,7 @@ import android.widget.ListView;
 import android.widget.Spinner;
 
 import com.sasha.reviews.R;
-import com.sasha.reviews.adapter.TeachersSmallAdapter;
+import com.sasha.reviews.adapters.TeachersSmallAdapter;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

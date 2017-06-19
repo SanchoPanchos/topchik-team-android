@@ -3,7 +3,7 @@ package com.sasha.reviews;
 import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
 
-import com.sasha.reviews.activity.Register;
+import com.sasha.reviews.activities.Register;
 
 import org.junit.Rule;
 import org.junit.Test;

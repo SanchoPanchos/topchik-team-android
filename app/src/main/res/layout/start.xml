@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:background="@drawable/back2"
     android:layout_height="match_parent"
-    tools:context="com.sasha.reviews.activity.Start">
+    tools:context="com.sasha.reviews.activities.Start">
 
     <RelativeLayout
         android:layout_width="match_parent"

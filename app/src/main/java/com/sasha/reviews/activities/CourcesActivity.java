@@ -1,15 +1,15 @@
-package com.sasha.reviews.activity;
+package com.sasha.reviews.activities;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.sasha.reviews.R;
 
-public class FacultyInfo extends AppCompatActivity {
+public class CourcesActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.faculty_info);
+        setContentView(R.layout.activity_cources);
     }
 }

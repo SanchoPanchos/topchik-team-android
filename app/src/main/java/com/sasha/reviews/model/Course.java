@@ -7,10 +7,10 @@ public class Course {
     private String about;
     private int credits;
     private int hours;
-    private List<TeacherDep> teachers;
+    private List<String> teachers;
     private String name;
 
-    public Course(String about, int credits, int hours, List<TeacherDep> teachers, String name) {
+    public Course(String about, int credits, int hours, List<String> teachers, String name) {
         this.about = about;
         this.credits = credits;
         this.hours = hours;
@@ -34,7 +34,7 @@ public class Course {
         return hours;
     }
 
-    public List<TeacherDep> getTeachers() {
+    public List<String> getTeachers() {
         return teachers;
     }
 

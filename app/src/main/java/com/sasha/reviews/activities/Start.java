@@ -1,4 +1,4 @@
-package com.sasha.reviews.activity;
+package com.sasha.reviews.activities;
 
 import android.app.Activity;
 import android.app.ProgressDialog;

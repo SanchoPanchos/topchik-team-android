@@ -1,4 +1,4 @@
-package com.sasha.reviews.adapter;
+package com.sasha.reviews.adapters;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.View;

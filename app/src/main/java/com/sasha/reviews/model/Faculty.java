@@ -9,13 +9,15 @@ public class Faculty {
     private String name;
     private String img;
     private String nameShort;
+    private String code;
     private List<Department> departments;
 
-    public Faculty(String about, String name, String nameShort, String img, List<Department> departments) {
+    public Faculty(String about, String name, String img, String nameShort, String code, List<Department> departments) {
         this.about = about;
         this.name = name;
-        this.nameShort = nameShort;
         this.img = img;
+        this.nameShort = nameShort;
+        this.code = code;
         this.departments = departments;
     }
 
@@ -37,5 +39,9 @@ public class Faculty {
 
     public List<Department> getDepartments() {
         return departments;
+    }
+
+    public String getCode() {
+        return code;
     }
 }

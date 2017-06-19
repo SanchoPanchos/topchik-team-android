@@ -1,9 +1,119 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.sasha.reviews.activity.FacultyInfo">
+    android:id="@+id/faculty_info_drawer"
+    tools:context="com.sasha.reviews.activities.FacultyInfo">
 
-</android.support.constraint.ConstraintLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:id="@+id/faculty_info_scroll"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <android.support.v7.widget.Toolbar
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:background="#00BCD6"
+                    android:id="@+id/faculty_info_toolbar"/>
+
+                <ImageView
+                    android:layout_below="@+id/faculty_info_toolbar"
+                    android:layout_width="85dp"
+                    android:layout_height="85dp"
+                    android:background="#ccc"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:id="@+id/faculty_info_image"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/faculty_info_faculty_text"
+                    android:layout_marginLeft="10dp"
+                    android:textSize="16sp"
+                    android:layout_alignTop="@+id/faculty_info_image"
+                    android:layout_toRightOf="@+id/faculty_info_image"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/faculty_info_departments_text"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_below="@+id/faculty_info_faculty_text"
+                    android:layout_toRightOf="@+id/faculty_info_image"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/faculty_info_teachers_text"
+                    android:text="MEMDMM D DJ "
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_below="@+id/faculty_info_departments_text"
+                    android:layout_toRightOf="@+id/faculty_info_image"/>
+
+                <com.ms.square.android.expandabletextview.ExpandableTextView
+                    xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:layout_marginTop="10dp"
+                    xmlns:expandableTextView="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/faculty_info_general_text"
+                    android:layout_width="match_parent"
+                    android:layout_below="@+id/faculty_info_image"
+                    android:layout_height="wrap_content"
+                    expandableTextView:maxCollapsedLines="5"
+                    expandableTextView:animDuration="200">
+
+                    <TextView
+                        android:id="@id/expandable_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:textSize="16sp"
+                        android:textColor="#666666" />
+
+                    <ImageButton
+                        android:id="@id/expand_collapse"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="16dp"
+                        android:layout_gravity="right|bottom"
+                        android:background="@android:color/transparent"/>
+                </com.ms.square.android.expandabletextview.ExpandableTextView>
+
+
+            </RelativeLayout>
+
+        </ScrollView>
+
+        <ListView
+            android:layout_width="match_parent"
+            android:id="@+id/faculty_info_departments_list"
+            android:layout_below="@+id/faculty_info_scroll"
+            android:layout_height="match_parent" />
+
+    </RelativeLayout>
+
+    <android.support.design.widget.NavigationView
+        android:background="#F7F7F7"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:itemIconTint="@color/menu_icon_color"
+        app:itemTextColor="@color/menu_text_color"
+        app:itemBackground="@android:color/transparent"
+        android:id="@+id/faculty_info_navigation_view"
+        app:menu="@menu/main_menu"/>
+
+</android.support.v4.widget.DrawerLayout>

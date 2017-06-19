@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.Start">
+        <activity android:name=".activities.Start">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -17,13 +17,14 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activity.Main"
+            android:name=".activities.Main"
             android:exported="true" />
-        <activity android:name=".activity.TeachersActivity" />
-        <activity android:name=".activity.CourcesActivity" />
-        <activity android:name=".activity.Register" />
-        <activity android:name=".activity.FacultyInfo" />
-        <activity android:name=".activity.CourseInfo"></activity>
+        <activity android:name=".activities.TeachersActivity" />
+        <activity android:name=".activities.CourcesActivity" />
+        <activity android:name=".activities.Register" />
+        <activity android:name=".activities.FacultyInfo" />
+        <activity android:name=".activities.CourseInfo" />
+        <activity android:name=".activities.DepartmentInfo"></activity>
     </application>
 
 </manifest>

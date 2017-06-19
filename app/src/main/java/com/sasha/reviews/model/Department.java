@@ -1,7 +1,6 @@
 package com.sasha.reviews.model;
 
-
-class Department {
+public class Department {
 
     private int departmentCode;
     private String name;
